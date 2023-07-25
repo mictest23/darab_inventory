@@ -62,7 +62,7 @@
               @foreach ($file as $files)
                 <tr class="bg-gray-200">
                   <td class="border px-4 py-2"><a target="_blank" href="../../files/{{ $files->filenamed }}">{{ $files->filenamed }}</a></td>
-                  <td class="border px-4 py-2"><a href="/{{ $files->id }}">delete</a></td>
+                  <td class="border px-4 py-2"><a href="../delete/{{ $files->id }}">delete</a></td>
                 </tr>
               @endforeach
             </tbody>
