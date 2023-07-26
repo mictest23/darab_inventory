@@ -24,7 +24,7 @@
     </div> 
     @endif
 
-  <form method="post" action="{{url('file')}}" enctype="multipart/form-data">
+  <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="post" action="{{url('file')}}" enctype="multipart/form-data">
   {{csrf_field()}}
 
       <div class="mb-4">
@@ -65,6 +65,84 @@
           </div>
           <p class="text-red-500 text-sm">@error('cabinet'){{ $message }}@enderror</p>
         </div>
+
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="message">Nature of case</label>
+          {{-- <textarea class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Enter Nature of case" wire:model="nature"></textarea> --}}
+          <select class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="nature">
+            <option value="" selected hidden>Select nature of case</option>
+            <option value="Review of an Agricultural Leasehold ALHC">Review of an Agricultural Leasehold ALHC</option>
+            <option value="Correction of Entry">Correction of Entry</option>
+            <option value="Ejectment">Ejectment</option>
+            <option value="Reinstatement with Damages">Reinstatement with Damages</option>
+            <option value="Inclusion and Exclusion on Transfer Certificate">Inclusion and Exclusion on Transfer Certificate</option>
+            <option value="cancellation of entry">Cancellation of entry</option>
+            <option value="Summary Administrative Proceeding to Determine Just Compensation">Summary Administrative Proceeding to Determine Just Compensation</option>
+            <option value="Inclusion and Exclusion on Transfer Certificate">Inclusion and Exclusion on Transfer Certificate</option>
+          </select>
+          <p class="text-red-500 text-sm">@error('nature'){{ $message }}@enderror</p>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="phone">Petitioner</label>
+          <input class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Enter petitioner" name="petitioners">
+          <p class="text-red-500 text-sm">@error('petitioners'){{ $message }}@enderror</p>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="phone">Respondent lessor</label>
+          <textarea class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Enter Lessors" name="lessor"></textarea>
+          <p class="text-red-500 text-sm">@error('lessor'){{ $message }}@enderror</p>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="phone">Respondent lessee</label>
+          <textarea class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Enter Lessee" name="lessee"></textarea>
+          <p class="text-red-500 text-sm">@error('lessee'){{ $message }}@enderror</p>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="phone">Location</label>
+          <input class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Enter location situated" name="location">
+          <p class="text-red-500 text-sm">@error('location'){{ $message }}@enderror</p>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 font-bold mb-2" for="phone">Date of alhc</label>
+          <input class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="date" placeholder="Enter your phone number" name="date_alhc">
+          <p class="text-red-500 text-sm">@error('date_alhc'){{ $message }}@enderror</p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-8">
+          <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="phone">Area</label>
+            <input class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Enter area of land" name="area">
+            <p class="text-red-500 text-sm">@error('area'){{ $message }}@enderror</p>
+          </div>
+          <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="phone">Crop</label>
+            <select class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="crops">
+              <option value="" selected hidden>Crop being cultivated</option>
+              <option value="rice">Rice</option>
+              <option value="corn">Corn</option>
+              <option value="banana">Banana</option>
+              <option value="camote">Kamote</option>
+              <option value="balanghoy">Balanghoy</option>
+              <option value="coconut">Coconut</option>
+              <option value="Mango">Mango</option>
+              <option value="abaca">Abaca</option>
+              <option value="cofee/cacao">Coffee/Cacao</option>
+              <option value="Commercial Trees/Orchard">Commercial Trees/Orchard</option>
+              <option value="Palm Trees">Palm Trees</option>
+              <option value="Pineapple">Pineapple</option>
+              <option value="Rootcrops">Rootcrops</option>
+              <option value="Vegetables">Vegetables</option>
+              <option value="Others">Others</option>
+            </select>
+            <p class="text-red-500 text-sm">@error('crops'){{ $message }}@enderror</p>
+          </div>
+      </div>
+
+      <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="phone">Counsel</label>
+        <textarea class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Enter Counsels" name="counsel"></textarea>
+        <p class="text-red-500 text-sm">@error('counsel'){{ $message }}@enderror</p>
+      </div>
 
       <div class="input-group control-group increment" >
         <input type="file" name="filename1" class="form-control">

@@ -53,9 +53,9 @@
             <td class="border px-4 py-2 w-40">{{ $value->location }}</td>
 
             <td class="border px-4 py-2 w-60">
-              {{-- @foreach (json_decode($value->filename) as $test)
-                <a href="files/{{ $test }}">{{ $test }}</a>
-              @endforeach --}}
+              @foreach ($value->file as $result)
+                <a href="files/{{ $result->filenamed }}">{{ $result->filenamed }}</a><br>
+              @endforeach
             </td>
 
             <td class="border py-2 text-sm w-20">

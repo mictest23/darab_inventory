@@ -81,8 +81,9 @@ class TableView extends Component
 
     public function render(){
         $cab_edit = Cabinet::all();
-        $records = Record::all();
+        $records = Record::with('file')->get();
         $rec = Record::all();
+        // $rec = Record::with('file')->get();
         return view('livewire.table-view', [
             'cab_edit' => $cab_edit,    
             'rec' => $rec,    
