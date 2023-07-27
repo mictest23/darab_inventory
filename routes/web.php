@@ -39,6 +39,7 @@ Route::middleware(['auth:web'])->group(function(){
     // new update code
     Route::get('/update/{record}', [UpdateController::class, 'update'])->name('update');
     Route::get('/delete/{id}', [UpdateController::class, 'delete'])->name('delete');
+    Route::post('file-update/{id}', [UpdateController::class, 'store'])->name('file-update');
 
     Route::view('/cabinet_add', 'back.pages.cabinet_add')->name('cabinet_add');
     Route::get('/cabinet_specific/{cab_specific}', [AdminController::class, 'cab_spec'])->name('cabinet_specific');

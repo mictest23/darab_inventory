@@ -6,7 +6,7 @@
 
 <a href="/view">Go back</a>
 
-<form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="post" action="" enctype="multipart/form-data">
+<form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="post" action="/file-update/{{$record->id}}" enctype="multipart/form-data">
   {{csrf_field()}}
 
       <div class="mb-4">
@@ -195,9 +195,8 @@
         </div>
       </div>
 
-      <button type="submit" class="btn btn-primary" style="margin-top:10px">Submit</button>
-
-  </form> 
+    <button type="submit" class="btn btn-primary" style="margin-top:10px">Submit</button>
+</form> 
 
   <script type="text/javascript">
     $(document).ready(function() {

@@ -154,6 +154,5 @@ class AddController extends Controller
 
         return back()->with('success', 'Your files has been successfully added');
     }
-
     
 }
