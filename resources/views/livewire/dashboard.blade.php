@@ -27,7 +27,7 @@
                 <th class="px-4 py-2">Petitioner</th>
                 <th class="px-4 py-2">Lessor</th>
                 <th class="px-4 py-2">Lessee</th>
-                <th class="px-4 py-2">Ecopy</th>
+                {{-- <th class="px-4 py-2">Ecopy</th> --}}
               </tr>
             </thead>
             <tbody class="text-gray-900">
@@ -38,7 +38,7 @@
                 <td class="border px-4 py-2">{{ $latests->petitioners }}</td>
                 <td class="border px-4 py-2">{{ $latests->lessor }}</td>
                 <td class="border px-4 py-2">{{ $latests->lessee }}</td>
-                <td class="border px-4 py-2"> <a href="/storage/files/{{ $latests->name }}">{{ $latests->name }}</a></td>
+                {{-- <td class="border px-4 py-2"> <a href="/storage/files/{{ $latests->name }}">{{ $latests->name }}</a></td> --}}
               </tr>
             @endforeach
             </tbody>

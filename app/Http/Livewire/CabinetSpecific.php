@@ -27,6 +27,7 @@ class CabinetSpecific extends Component
 
     public function render(){
         $search = '%'.$this->search.'%';
+        $recs = Record::with('file')->get();
         return view('livewire.cabinet-specific',  [
             'recs' => Record::where('docket_number','like', $search)->where('cabinet', $this->cab_specific)->get()
         ])->layout('livewire.cabinet-specific');;

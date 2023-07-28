@@ -17,14 +17,18 @@
       </tr>
     </thead>
     <tbody class="text-gray-900">
-        @foreach ($recs as $record )
+        @foreach ($recs as $key => $record )
       <tr>
         <td class="border px-4 py-2 w-72">{{ $record->docket_number }}</td>
         <td class="border px-4 py-2 w-28">{{ $record->cabinet }}</td>
         <td class="border px-4 py-2 w-45">{{ $record->petitioners }}</td>
         <td class="border px-4 py-2 w-40">{{ $record->lessor }}</td>
         <td class="border px-4 py-2 w-40">{{ $record->lessee }}</td>
-        <td class="border px-4 py-2 w-60"><a href="../storage/files/{{ $record->name }}" target="_blank">{{ $record->name }}</a></td>
+        <td class="border px-4 py-2 w-60">
+          @foreach ($record->file as $result)
+            <a href="../files/{{ $result->filenamed }}">{{ $result->filenamed }}</a>
+          @endforeach
+        </td>
       </tr>
       @endforeach
     </tbody>
