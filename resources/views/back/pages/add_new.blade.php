@@ -7,7 +7,7 @@
 {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> --}}
 
 <div>
-  @if (count($errors) > 0)
+  {{-- @if (count($errors) > 0)
   <div class="alert alert-danger">
     <strong>Whoops!</strong> There were some problems with your input.<br><br>
     <ul>
@@ -16,7 +16,7 @@
       @endforeach
     </ul>
   </div>
-  @endif
+  @endif --}}
 
     @if(session('success'))
     <div class="alert alert-success">
