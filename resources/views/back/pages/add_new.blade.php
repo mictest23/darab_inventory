@@ -29,12 +29,12 @@
 
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="full_name">Docket number</label>
-        <input class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="BOH-VII-" name="docket_number">
+        <input class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="BOH-VII-" type="text" placeholder="BOH-VII-" name="docket_number">
         <p class="text-red-500 text-sm">@error('docket_number'){{ $message }}@enderror</p>
       </div>
       <div class="mb-4">
         <label class="block text-gray-700 font-bold mb-2" for="email">Date filed</label>
-        <input class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="date" placeholder="Enter your email" name="date_filed">
+        <input class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ old('date_filed') }}" type="date" placeholder="Enter your email" name="date_filed">
         <p class="text-red-500 text-sm">@error('date_filed'){{ $message }}@enderror</p>
       </div>
 
@@ -84,22 +84,22 @@
         </div>
         <div class="mb-4">
           <label class="block text-gray-700 font-bold mb-2" for="phone">Petitioner</label>
-          <input class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Enter petitioner" name="petitioners">
+          <input class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" value="{{ old('petitioners') }}" placeholder="Enter petitioner" name="petitioners">
           <p class="text-red-500 text-sm">@error('petitioners'){{ $message }}@enderror</p>
         </div>
         <div class="mb-4">
           <label class="block text-gray-700 font-bold mb-2" for="phone">Respondent lessor</label>
-          <textarea class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Enter Lessors" name="lessor"></textarea>
+          <textarea class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Enter Lessors" name="lessor">{{ old('lessor') }}</textarea>
           <p class="text-red-500 text-sm">@error('lessor'){{ $message }}@enderror</p>
         </div>
         <div class="mb-4">
           <label class="block text-gray-700 font-bold mb-2" for="phone">Respondent lessee</label>
-          <textarea class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Enter Lessee" name="lessee"></textarea>
+          <textarea class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Enter Lessee" name="lessee">{{ old('lessee') }}</textarea>
           <p class="text-red-500 text-sm">@error('lessee'){{ $message }}@enderror</p>
         </div>
         <div class="mb-4">
           <label class="block text-gray-700 font-bold mb-2" for="phone">Location</label>
-          <input class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="Enter location situated" name="location">
+          <input class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" value="{{ old('location') }}" type="text" placeholder="Enter location situated" name="location">
           <p class="text-red-500 text-sm">@error('location'){{ $message }}@enderror</p>
         </div>
         <div class="mb-4">

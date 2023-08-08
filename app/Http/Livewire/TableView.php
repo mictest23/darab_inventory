@@ -151,10 +151,14 @@ class TableView extends Component
 
     public function deleteRecordData(){
         $record = Record::where('id', $this->record_delete_id)->first();
+
+        $rectest = Record::with('file')->find($this->record_delete_id);
+        foreach($rectest->file as $test){
+            // $path = Storage::disk('local')->path('public/files/'. $test->filenamed .''); 
+            unlink('files/'.$test->filenamed.'');
+        }
         $record->delete();
 
-        $path = Storage::disk('local')->path('public/files/'. $record->name .'');     //delete files when new file is added
-        unlink($path);
 
         $this->showToastr('Successfully deleted to database.', 'success');
         $this->dispatchBrowserEvent('close-modal');

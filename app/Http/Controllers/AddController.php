@@ -19,15 +19,15 @@ class AddController extends Controller
     public function store(Request $request){
         $this->validate($request, [
                 'docket_number' => 'required',
-                'date_filed' => 'date',
+               //  'date_filed' => 'date',
                //  'cabinet' => 'required',
                 'nature' => 'required',
                 'petitioners' => 'required',
                 'lessor' => 'required',
                 'lessee' => 'required',
                 'location' => 'required',
-                'date_alhc' => 'date',
-                'area' => 'numeric',
+               //  'date_alhc' => 'date',
+               //  'area' => 'numeric',
                //  'crops' => 'required',
                //  'counsel' => 'required',
                 // 'filename' => 'required',
@@ -149,7 +149,19 @@ class AddController extends Controller
             $record->file()->saveMany([new File(['filenamed' => $data1]), new File(['filenamed' => $data2]), new File(['filenamed' => $data3]),]);
          }
           else {
-            dd('way sulod tanan');
+            // dd('way sulod tanan');
+            $record->docket_number = $request->docket_number;
+            $record->date_filed = $request->date_filed;
+            $record->cabinet = $request->cabinet;
+            $record->nature = $request->nature;
+            $record->petitioners = $request->petitioners;
+            $record->lessor = $request->lessor;
+            $record->lessee = $request->lessee;
+            $record->location = $request->location;
+            $record->date_alhc = $request->date_alhc;
+            $record->area = $request->area;
+            $record->crops = $request->crops;
+            $record->counsel = $request->counsel;
          }
 
         return back()->with('success', 'Your files has been successfully added');

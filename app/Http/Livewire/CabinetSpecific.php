@@ -20,6 +20,7 @@ class CabinetSpecific extends Component
         $this->currenturl = url()->full();
     }
     
+    
 
     public function deleteConfirmation(){
         $this->dispatchBrowserEvent('show-delete-confirmation-modal');
