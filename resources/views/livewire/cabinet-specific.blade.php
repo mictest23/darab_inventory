@@ -11,8 +11,8 @@
         <th class="px-4 py-2">Docket No.</th>
         <th class="px-4 py-2">Cabinet</th>
         <th class="px-4 py-2">Petitioners</th>
-        <th class="px-4 py-2">Lessors</th>
-        <th class="px-4 py-2">Lessee</th>
+        <th class="px-4 py-2">Respondent</th>
+        <th class="px-4 py-2">Respondent</th>
         <th class="px-4 py-2">E-Copy</th>
       </tr>
     </thead>

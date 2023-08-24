@@ -33,8 +33,8 @@
             <th class="px-4 py-2">Cabinet</th>
             <th class="px-4 py-2">Nature of case</th>
             <th class="px-4 py-2">Petitioners</th>
-            <th class="px-4 py-2">Lessors</th>
-            <th class="px-4 py-2">Lessee</th>
+            <th class="px-4 py-2">Respondents</th>
+            <th class="px-4 py-2">Respondents</th>
             <th class="px-4 py-2">Location</th>
             <th class="px-4 py-2">E-Copy</th>
             <th class="px-4 py-2">Actions</th>

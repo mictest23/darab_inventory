@@ -66,9 +66,8 @@
           <p class="text-red-500 text-sm">@error('cabinet'){{ $message }}@enderror</p>
         </div>
 
-        <div class="mb-4">
+        {{-- <div class="mb-4">
           <label class="block text-gray-700 font-bold mb-2" for="message">Nature of case</label>
-          {{-- <textarea class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Enter Nature of case" wire:model="nature"></textarea> --}}
           <select class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="nature">
             <option value="" selected hidden>Select nature of case</option>
             <option value="Review of an Agricultural Leasehold ALHC">Review of an Agricultural Leasehold ALHC</option>
@@ -79,22 +78,51 @@
             <option value="cancellation of entry">Cancellation of entry</option>
             <option value="Summary Administrative Proceeding to Determine Just Compensation">Summary Administrative Proceeding to Determine Just Compensation</option>
             <option value="Inclusion and Exclusion on Transfer Certificate">Inclusion and Exclusion on Transfer Certificate</option>
+            <option value="Recovery of Possession of a Parcel of Land with damages">Recovery of Possession of a Parcel of Land with damages</option>
+            <option value="Quieting of title">Quieting of title</option>
+            <option value="Dispossession of Landholding">Dispossession of Landholding</option>
+            <option value="Issuance of new duplicate copy">Issuance of new duplicate copy</option>
+            <option value="Issuance of lost titles">Issuance of lost titles</option>
           </select>
-          <p class="text-red-500 text-sm">@error('nature'){{ $message }}@enderror</p>
+
+        <p class="text-red-500 text-sm">@error('nature'){{ $message }}@enderror</p>
+        </div> --}}
+        <div class="mb-4">
+        <label class="block text-gray-700 font-bold mb-2" for="phone">Nature of case</label>
+        <input type="text" id="fruitInput" list="fruits" placeholder="Enter nature of case" class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="nature">
+        <p class="text-red-500 text-sm">@error('nature'){{ $message }}@enderror</p>
+          <datalist id="fruits">
+            <option value="" selected hidden>Select nature of case</option>
+            <option value="Review of an Agricultural Leasehold ALHC">Review of an Agricultural Leasehold ALHC</option>
+            <option value="Correction of Entry">Correction of Entry</option>
+            <option value="Ejectment">Ejectment</option>
+            <option value="Reinstatement with Damages">Reinstatement with Damages</option>
+            <option value="Inclusion and Exclusion on Transfer Certificate">Inclusion and Exclusion on Transfer Certificate</option>
+            <option value="cancellation of entry">Cancellation of entry</option>
+            <option value="Summary Administrative Proceeding to Determine Just Compensation">Summary Administrative Proceeding to Determine Just Compensation</option>
+            <option value="Inclusion and Exclusion on Transfer Certificate">Inclusion and Exclusion on Transfer Certificate</option>
+            <option value="Recovery of Possession of a Parcel of Land with damages">Recovery of Possession of a Parcel of Land with damages</option>
+            <option value="Quieting of title">Quieting of title</option>
+            <option value="Dispossession of Landholding">Dispossession of Landholding</option>
+            <option value="Issuance of new duplicate copy">Issuance of new duplicate copy</option>
+            <option value="Issuance of lost titles">Issuance of lost titles</option>
+          </datalist>
         </div>
+
+
         <div class="mb-4">
           <label class="block text-gray-700 font-bold mb-2" for="phone">Petitioner</label>
           <input class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" value="{{ old('petitioners') }}" placeholder="Enter petitioner" name="petitioners">
           <p class="text-red-500 text-sm">@error('petitioners'){{ $message }}@enderror</p>
         </div>
         <div class="mb-4">
-          <label class="block text-gray-700 font-bold mb-2" for="phone">Respondent lessor</label>
-          <textarea class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Enter Lessors" name="lessor">{{ old('lessor') }}</textarea>
+          <label class="block text-gray-700 font-bold mb-2" for="phone">Respondent</label>
+          <textarea class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Enter respondents" name="lessor">{{old('lessor')}}</textarea>
           <p class="text-red-500 text-sm">@error('lessor'){{ $message }}@enderror</p>
         </div>
         <div class="mb-4">
-          <label class="block text-gray-700 font-bold mb-2" for="phone">Respondent lessee</label>
-          <textarea class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Enter Lessee" name="lessee">{{ old('lessee') }}</textarea>
+          <label class="block text-gray-700 font-bold mb-2" for="phone">Respondent</label>
+          <textarea class="shadow-md appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="message" placeholder="Enter respondents" name="lessee">{{ old('lessee') }}</textarea>
           <p class="text-red-500 text-sm">@error('lessee'){{ $message }}@enderror</p>
         </div>
         <div class="mb-4">
@@ -176,8 +204,33 @@
         </div>
       </div>
 
-
-
+      {{-- <script>
+        const select = document.getElementById('customSelect');
+        const input = document.getElementById('customInput');
+        let typingInInput = false;
+    
+        select.addEventListener('change', function() {
+          if (select.value === 'other') {
+            input.style.display = 'block';
+            input.value = '';
+            input.focus();
+          } else {
+            input.style.display = 'none';
+          }
+        });
+    
+        input.addEventListener('focus', function() {
+          typingInInput = true;
+        });
+    
+        input.addEventListener('blur', function() {
+          if (!typingInInput) {
+            select.value = input.value;
+            input.style.display = 'none';
+          }
+          typingInInput = false;
+        });
+      </script> --}}
 
       <button type="submit" class="btn btn-primary" style="margin-top:10px">Submit</button>
 
@@ -198,7 +251,11 @@ $(document).ready(function() {
   });
 
 });
+
 </script>
+
+
+
 
 
 @endsection
